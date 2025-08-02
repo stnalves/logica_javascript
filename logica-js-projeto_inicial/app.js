@@ -1,16 +1,17 @@
 alert('Boas vindas ao jogo do número secreto'); //alert: cria um pop-up ao abrir o site
-let numeroSecreto = parseInt(Math.random() * 100 + 1); //let: cria variável
+let numeroMaximo = 50000;
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1); //let: cria variável
 //parseInt: transforma o número em inteiro
 //Math.random: gera um número aleatório entre [0, 1[
 console.log('Número secreto: ' + numeroSecreto);
 //prompt('Escolha um número entre 1 e 30'); //prompt :cria um pop-up que permite que o usuário insira algo
 //let chute = prompt('Escolha um número entre 1 e 30'); //armazena o que o usuário insireriu em uma variável
-let chute
+let chute;
 //console.log('Valor do chute: ', chute);
 let tentativas = 1;
 
 while (chute != numeroSecreto) {
-    chute = prompt('Escolha um número entre 1 e 100');
+    chute = prompt(`Escolha um número entre 1 e ${numeroMaximo}`);
     console.log('Resultado da comparação: ', chute == numeroSecreto);
     console.log('Valor do chute: ', chute);
     if (chute == numeroSecreto) {
@@ -29,7 +30,7 @@ while (chute != numeroSecreto) {
     }
 }
 
-let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa' //operador ternário
+let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa'; //operador ternário
 alert(`Isso aí! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}.`);
 
 // if (tentativas > 1) {
